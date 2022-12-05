@@ -1,8 +1,8 @@
-# TinyQRCode
+# tiny-qrcode
 
 ![screenshot](screenshot.png)
 
-A tiny QRCode generator (single file, no dependencies)
+A tiny QR Code generator (single file, no dependencies)
 
 
 ## Requirements:
@@ -21,7 +21,7 @@ composer require esyede/tiny-qrcode
 
 Manual install:
 
-  1. Download the archive from the [release page](https://githun.com/esyede/tiny-qrcode/releases/latest)
+  1. Download the archive from the [release page](https://github.com/esyede/tiny-qrcode/releases/latest)
   2. Extract the downloaded archive file
 
 
