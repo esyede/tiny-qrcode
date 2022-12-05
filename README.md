@@ -1,5 +1,7 @@
 # TinyQRCode
 
+![screenshot](screenshot.png)
+
 A tiny QRCode generator (single file, no dependencies)
 
 
