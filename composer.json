@@ -21,6 +21,9 @@
         "php": ">=5.4.0",
         "ext-gd": "*"
     },
+    "autoload": {
+        "files": ["TinyQRCode.php"]
+    },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist"
