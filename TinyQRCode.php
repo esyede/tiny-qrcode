@@ -299,16 +299,66 @@ class TinyQRCode
             $this->setVersion($options['version']);
         }
 
+        if (array_key_exists('imageSize', $options)) {
+            $this->setImageSize($options['imageSize']);
+        }
+
+        if (array_key_exists('errorCorrectionLevel', $options)) {
+            $this->setErrorCorrectionLevel($options['errorCorrectionLevel']);
+        }
+
         if (array_key_exists('dataPath', $options)) {
-            $this->dataPath = $options['dataPath'];
+            $this->setDataPath($options['dataPath']);
         }
 
         if (array_key_exists('imagesPath', $options)) {
-            $this->imagesPath = $options['imagesPath'];
+            $this->setImagesPath($options['imagesPath']);
         }
 
         $this->setData($data);
         $this->generate();
+    }
+
+    /**
+     * Set the data path.
+     *
+     * @param string $dataPath
+     *
+     * @return void
+     */
+    protected function setDataPath($dataPath)
+    {
+        $dataPath = trim($dataPath);
+
+        if (! is_dir($dataPath) || ! is_readable($dataPath)) {
+            throw new \Exception(sprintf(
+                'Data path should be a readable directory: %s',
+                $dataPath
+            ));
+        }
+
+        $this->dataPath = $dataPath;
+    }
+
+    /**
+     * Set the images path.
+     *
+     * @param string $imagesPath
+     *
+     * @return void
+     */
+    protected function setImagesPath($imagesPath)
+    {
+        $imagesPath = trim($imagesPath);
+
+        if (! is_dir($imagesPath) || ! is_readable($imagesPath)) {
+            throw new \Exception(sprintf(
+                'Images path should be a readable directory: %s',
+                $imagesPath
+            ));
+        }
+
+        $this->imagesPath = $imagesPath;
     }
 
     /**
@@ -329,6 +379,7 @@ class TinyQRCode
         $this->dataString = $str;
         $this->dataLength = strlen($str);
     }
+
 
     /**
      * Set the error correction level (L: 7%, M: 15%, Q: 25%, H: 30%).
