@@ -63,7 +63,7 @@ $options = ['errorCorrectionLevel' => 'H'];
 $qr = new \Esyede\TinyQRCode\TinyQRCode($data, $options);
 $qr->display();
 ```
-**Available ERROR correction levels:**
+**Available error correction levels:**
 
 | Code | Correction Level |
 |------|------------------|
